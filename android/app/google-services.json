@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "206479033887",
+    "project_id": "messages-13187",
+    "storage_bucket": "messages-13187.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:206479033887:android:5f68b050e4faab46ba372a",
+        "android_client_info": {
+          "package_name": "thrive.messages.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvdzkJenRMc182vn0SZ7HlZsvnmORMIoQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
