@@ -1,20 +1,38 @@
-# messages
-<<<<<<< HEAD
-A messages app that works with your email adress.
-=======
 
-A new Flutter project.
 
+# Messages App
+
+![Logo](https://framerusercontent.com/images/J3P8T7GwWDskp9igsgFDCPr3ZA.png)
+
+Messages is a messanger, where you are chatting with your email. Coming soon!!!
+
+## Features✨
+
+- Light/dark mode
+- Report users
+- Block users
+- Add users
+- 
 ## Getting Started
+#### 1. Clone the repository
 
-This project is a starting point for a Flutter application.
+git clone https://github.com/ThriveEngineer/messages.git
 
-A few resources to get you started if this is your first Flutter project:
+-----------------------------------------------------------------------
+#### 2. Navigate to the project directory
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+-----------------------------------------------------------------------
+#### 3. Install dependencies
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
->>>>>>> 300ab91 (Login will be soon ready)
+flutter pub get
+
+-----------------------------------------------------------------------
+#### 4. Run the app
+
+flutter run
+
+
+## Other stuff
+### [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/L4L115XHM6)
+### [Feedback🤚](https://tinted-seaplane-cb4.notion.site/12a93fc8858b8026820dd172dffdb309?pvs=105)
+### [Bug report🐞](https://tinted-seaplane-cb4.notion.site/12a93fc8858b80f390eadfc3905f79de?pvs=105)
