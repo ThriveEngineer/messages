@@ -13,13 +13,39 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home'),
+        backgroundColor: Theme.of(context).colorScheme.surface.withOpacity(0.5),
+        title: Center(child: const Text('Home')),
         actions: [
-          IconButton(
-            onPressed: logout, 
-            icon: Icon(CupertinoIcons.square_arrow_left),
-            ),
+          PopupMenuButton(
+            shadowColor: Colors.transparent,
+            color: Theme.of(context).colorScheme.tertiary,
+            icon: const Icon(CupertinoIcons.ellipsis_circle),
+            itemBuilder: (context) => [
+              PopupMenuItem(
+                child: TextButton(
+              onPressed: logout, 
+              child: Text("Logout")
+              ),
+             ),
+             PopupMenuItem(
+                child: TextButton(
+              onPressed: () {}, 
+              child: Text("Blocked Users")
+              ),
+             ),
+             PopupMenuItem(
+                child: TextButton(
+              onPressed: () {}, 
+              child: Text(
+                "Delete Account",
+                style: TextStyle(color: Colors.red),
+                )
+              ),
+             ),
+            ],
+           )
         ],
+        leading: const Icon(CupertinoIcons.ellipsis_circle),
       ),
     );
   }
