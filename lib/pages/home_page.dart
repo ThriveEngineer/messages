@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:messages/components/my_drawer.dart';
 import 'package:messages/services/auth/auth_service.dart';
 
 class HomePage extends StatelessWidget {
@@ -12,40 +13,31 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.surface.withOpacity(0.5),
-        title: Center(child: const Text('Home')),
+        title: Center(
+          child: Text(
+            'Messages',
+            style: TextStyle(
+              color: Theme.of(context).colorScheme.inversePrimary,
+              fontWeight: FontWeight.w500
+              ),
+            ),
+        ),
         actions: [
-          PopupMenuButton(
-            shadowColor: Colors.transparent,
-            color: Theme.of(context).colorScheme.tertiary,
-            icon: const Icon(CupertinoIcons.ellipsis_circle),
-            itemBuilder: (context) => [
-              PopupMenuItem(
-                child: TextButton(
-              onPressed: logout, 
-              child: Text("Logout")
-              ),
-             ),
-             PopupMenuItem(
-                child: TextButton(
-              onPressed: () {}, 
-              child: Text("Blocked Users")
-              ),
-             ),
-             PopupMenuItem(
-                child: TextButton(
-              onPressed: () {}, 
-              child: Text(
-                "Delete Account",
-                style: TextStyle(color: Colors.red),
-                )
-              ),
-             ),
-            ],
-           )
+           IconButton(
+            onPressed: logout,
+            icon: Icon(Icons.logout_rounded),
+            ),
+          ]
+      ),
+      drawer: MyDrawer(),
+
+      body: Column(
+        children: [
+
         ],
-        leading: const Icon(CupertinoIcons.ellipsis_circle),
       ),
     );
   }
