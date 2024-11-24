@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:messages/components/themes/dark_mode.dart';
 import 'package:messages/components/themes/light_mode.dart';
 import 'package:messages/firebase_options.dart';
-import 'package:messages/services/auth/login_or_register.dart';
+import 'package:messages/services/auth/auth_gate.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginOrRegister(),
+      home: const AuthGate(),
       theme: lightMode,
       darkTheme: darkMode,
     );
