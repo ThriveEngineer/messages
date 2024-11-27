@@ -1,9 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:messages/components/my_drawer.dart';
+import 'package:messages/services/auth/auth_service.dart';
+import 'package:messages/services/chat/chat_services.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  HomePage({super.key});
+
+  // chat @ auth service
+  final ChatService _chatService = ChatService();
+  final AuthService _authService = AuthService();
 
   @override
   Widget build(BuildContext context) {
@@ -22,13 +28,32 @@ class HomePage extends StatelessWidget {
               ),
         ),
       ),
-      drawer: MyDrawer(),
+      drawer: const MyDrawer(),
 
-      body: Column(
-        children: [
-
-        ],
-      ),
+      body: _buildUserList(),
     );
+  }
+
+  // build user list
+  Widget _buildUserList() {
+    return StreamBuilder(
+      stream: _chatService.getUsersStream(), 
+      builder: (context, snapshot) {
+        // error
+        if (snapshot.hasError) {
+          return Text('Error: ${snapshot.error}');
+        }
+
+        // loading
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return const Center(child: CircularProgressIndicator());
+        }
+
+        // return list view
+        return ListView(
+          children: snapshot.data!.map<Widget>((userData) => _buildUserListItem).toList(),
+        );
+      }
+      );
   }
 }

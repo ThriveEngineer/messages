@@ -131,11 +131,33 @@ class SettingsPage extends StatelessWidget {
 
              SizedBox(height: 15,),
 
-             // GIT link
-             ClickableLink(
-              text: "GitHub Repository", 
-              url: "https://github.com/ThriveEngineer/messages",
+             // GitHub name
+             SelectableText(
+              "GitHub: @ThriveEngineer",
+              style: TextStyle(
+                color: Theme.of(context).colorScheme.inversePrimary,
               ),
+             ),
+
+             SizedBox(height: 10,),
+
+             // Support me
+             SelectableText(
+              "Support me: https://ko-fi.com/thriveengineer",
+              style: TextStyle(
+                color: Theme.of(context).colorScheme.inversePrimary,
+              ),
+             ),
+
+             SizedBox(height: 10,),
+
+             // Bento link
+             SelectableText(
+              "Other Links: https://bento.me/thrive",
+              style: TextStyle(
+                color: Theme.of(context).colorScheme.inversePrimary,
+              ),
+             ),
              
         ],
       ),
