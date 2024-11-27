@@ -12,7 +12,7 @@ Messages is a messanger, where you are chatting with your email. Coming soon!!!
 - Report users
 - Block users
 - Add users
-- 
+
 ## Getting Started
 #### 1. Clone the repository
 
