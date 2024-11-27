@@ -2,7 +2,7 @@
 
 # Messages App
 
-![Logo](https://framerusercontent.com/images/J3P8T7GwWDskp9igsgFDCPr3ZA.png)
+![Logo](https://framerusercontent.com/images/S1reQas41vn9JiEzgT3TxwQbIUw.png)
 
 Messages is a messanger, where you are chatting with your email. Coming soon!!!
 
