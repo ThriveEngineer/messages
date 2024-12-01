@@ -24,6 +24,9 @@ class AuthService {
         email: email,
         password: password,
       );
+
+      // saver user info
+      
       return userCredential;
     } on FirebaseAuthException catch (e) {
       throw Exception(e.code);

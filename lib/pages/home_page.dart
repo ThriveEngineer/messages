@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:messages/components/my_drawer.dart';
 import 'package:messages/components/user_tile.dart';
+import 'package:messages/pages/chat_page.dart';
 import 'package:messages/services/auth/auth_service.dart';
 import 'package:messages/services/chat/chat_services.dart';
 
@@ -52,7 +53,7 @@ class HomePage extends StatelessWidget {
 
         // return list view
         return ListView(
-          children: snapshot.data!.map<Widget>((userData) => _buildUserListItem).toList(),
+          children: snapshot.data!.map<Widget>((userData) => _buildUserListItem(userData, context)).toList(),
         );
       }
       );
@@ -60,6 +61,18 @@ class HomePage extends StatelessWidget {
 
   // build user list item
   Widget _buildUserListItem(Map<String, dynamic> userData, BuildContext context) {
-    return UserTile();
+    return UserTile(
+      text: userData["email"],
+      onTap: () {
+        Navigator.push(
+          context, 
+          MaterialPageRoute(
+            builder: (context) => ChatPage(
+              receiverEmail: userData["email"],
+            ),
+            ),
+          );
+      },
+    );
   }
 }
