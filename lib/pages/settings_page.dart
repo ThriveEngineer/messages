@@ -51,6 +51,16 @@ class SettingsPage extends StatelessWidget {
                     fontWeight: FontWeight.w500
                     ),
                    ),
+
+                   SizedBox(width: 180),
+
+                   Text(
+                    "Adaptive",
+                    style: TextStyle(
+                    color: Theme.of(context).colorScheme.inversePrimary,
+                    fontWeight: FontWeight.w700
+                    ),
+                    )
                   ],
                 ),
                            ),
