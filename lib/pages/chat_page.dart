@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:messages/components/chat_bubble.dart';
 import 'package:messages/components/my_textfield.dart';
 import 'package:messages/services/auth/auth_service.dart';
 import 'package:messages/services/chat/chat_services.dart';
@@ -77,22 +78,44 @@ class ChatPage extends StatelessWidget {
   // build message item
   Widget _buildMessageItem(DocumentSnapshot doc) {
     Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
-    return Text(data["message"]);
+
+    // is current user
+    bool isCurrentUser = data["senderID"] == _authService.getCurrentUser()!.uid;
+
+    // align messages right
+    var alignment = 
+    isCurrentUser ? Alignment.centerRight : Alignment.centerLeft;
+
+    return Container(
+      alignment: alignment,
+      child: Column(
+        crossAxisAlignment: isCurrentUser ? CrossAxisAlignment.end : CrossAxisAlignment.start,
+        children: [
+          ChatBubble(message: data["message"], isCurrentUser: isCurrentUser,)
+        ],
+      ));
   }
 
   // build message input
   Widget _buildUserInput() {
-    return Row(
-      children: [
-        Expanded(
-          child: MyTextfield(
-            controller: _messageController,
-            hintText: "Type your message",
-            obscureText: false,
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 25, right: 25,),
+      child: Row(
+        children: [
+          Expanded(
+            child: MyTextfield(
+              controller: _messageController,
+              hintText: "Type your message",
+              obscureText: false,
+            ),
           ),
-        ),
-        IconButton(onPressed: sendMessage, icon: const Icon(Icons.arrow_upward_rounded))
-      ],
+          Container(
+            decoration: BoxDecoration(color: Colors.redAccent,
+            shape: BoxShape.circle
+            ),
+            child: IconButton(onPressed: sendMessage, icon: const Icon(Icons.arrow_upward_rounded)))
+        ],
+      ),
     );
   }
 }
