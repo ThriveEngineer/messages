@@ -5,7 +5,9 @@
 ![Logo](https://framerusercontent.com/images/S1reQas41vn9JiEzgT3TxwQbIUw.png)
 
 Messages is a messanger, where you are chatting with your email. Messages is also available with the Nothing theme. 
+
 Download Nothing themed Messages [APK](https://github.com/ThriveEngineer/messages/releases/download/v1.0.0/app-release.apk)
+
 Download Normal themed Messages
 
 ## Features✨
