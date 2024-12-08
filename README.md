@@ -4,7 +4,7 @@
 
 ![Logo](https://framerusercontent.com/images/S1reQas41vn9JiEzgT3TxwQbIUw.png)
 
-Nothing Messages is a messanger, where you are chatting with your email.
+Nothing Messages is a messanger, where you are chatting with your email. Download [APK](https://github.com/ThriveEngineer/messages/releases/download/v1.0.0/app-release.apk)
 
 ## Features✨
 - Light/dark mode
