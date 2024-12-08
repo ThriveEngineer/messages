@@ -8,7 +8,7 @@ Messages is a messanger, where you are chatting with your email. Messages is als
 
 Download Nothing themed Messages [APK](https://github.com/ThriveEngineer/messages/releases/download/v1.0.0/app-release-nothing.apk)
 
-Download Normal themed Messages [APK](https://github.com/ThriveEngineer/messages/releases/download/v1.0.0/app-release-normal.apk)
+Download Normal themed Messages [APK](https://github.com/ThriveEngineer/messages/releases/download/v1.0.0/app-release.apk)
 
 ## Features✨
 - Light/dark mode
