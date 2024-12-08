@@ -1,10 +1,14 @@
 
 
-# Nothing messages
+# Messages
 
-![Logo](https://framerusercontent.com/images/S1reQas41vn9JiEzgT3TxwQbIUw.png)
+![Image](https://framerusercontent.com/images/P1TBX2V2pa1nzuLn2wFmP9vgFmg.png)
 
-Nothing Messages is a messanger, where you are chatting with your email.
+Messages is a messanger, where you are chatting with your email. Messages is also available with the Nothing theme. 
+
+Download Nothing themed Messages [APK](https://github.com/ThriveEngineer/messages/releases/download/v1.0.0/app-release-nothing.apk)
+
+Download Normal themed Messages [APK](https://github.com/ThriveEngineer/messages/releases/download/v1.0.0/app-release-normal.apk)
 
 ## Features✨
 - Light/dark mode
@@ -12,7 +16,8 @@ Nothing Messages is a messanger, where you are chatting with your email.
 ## Coming soon!!!
 - Report users
 - Block users
-- Add users
+- notification
+- Send images
 
 ## Getting Started
 #### 1. Clone the repository
