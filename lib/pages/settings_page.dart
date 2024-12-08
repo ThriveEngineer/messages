@@ -112,7 +112,7 @@ class SettingsPage extends StatelessWidget {
                   margin: const EdgeInsets.symmetric(horizontal: 25),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    color: Colors.redAccent
+                    color: Colors.blueAccent
                   ),
                   child: Row(
                     children: [

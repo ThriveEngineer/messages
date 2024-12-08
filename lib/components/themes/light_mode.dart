@@ -9,5 +9,4 @@ ThemeData lightMode = ThemeData(
     tertiary: Colors.white,
     inversePrimary: Colors.grey.shade900,
   ),
-  fontFamily: "nothing-font-5x7",
 );

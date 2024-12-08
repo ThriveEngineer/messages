@@ -24,7 +24,6 @@ class ChatHomeScreen extends StatelessWidget {
               'Messages',
               style: TextStyle(
                 color: Theme.of(context).colorScheme.inversePrimary,
-                fontFamily: "nothing-font-5x7",
                 fontWeight: FontWeight.w500
                 ),
               ),
@@ -136,7 +135,7 @@ class ChatRoomListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       leading: CircleAvatar(
-        backgroundColor: Colors.redAccent,
+        backgroundColor: Colors.blueAccent,
         child: Text(
           otherUserEmail[0].toUpperCase(),
           style: const TextStyle(color: Colors.white),

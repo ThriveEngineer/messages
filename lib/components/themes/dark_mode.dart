@@ -9,5 +9,4 @@ ThemeData darkMode = ThemeData(
     tertiary: const Color.fromARGB(255, 20, 20, 20),
     inversePrimary: Colors.grey.shade300,
   ),
-  fontFamily: "nothing-font-5x7",
 );

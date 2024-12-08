@@ -133,7 +133,7 @@ class _ChatButtonState extends State<ChatButton> {
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
-      backgroundColor: Colors.redAccent,
+      backgroundColor: Theme.of(context).colorScheme.tertiary,
       onPressed: _isLoading ? null : _showAddChatDialog,
       child: _isLoading
           ? CircularProgressIndicator(color: Theme.of(context).colorScheme.inversePrimary,)
@@ -219,7 +219,7 @@ class MessageBubble extends StatelessWidget {
               maxWidth: MediaQuery.of(context).size.width * 0.7,
             ),
             decoration: BoxDecoration(
-              color: isCurrentUser ? Colors.redAccent : Theme.of(context).colorScheme.tertiary,
+              color: isCurrentUser ? Colors.blueAccent : Theme.of(context).colorScheme.tertiary,
               borderRadius: BorderRadius.circular(45),
             ),
             padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 5),
@@ -405,7 +405,7 @@ class _MessageInputState extends State<MessageInput> {
                       child: CircularProgressIndicator(strokeWidth: 2),
                     )
                   : const Icon(Icons.send),
-              color: Colors.redAccent,
+              color: Colors.blueAccent,
             ),
           ],
         ),
