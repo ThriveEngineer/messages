@@ -73,6 +73,8 @@ class _ChatPageState extends State<ChatPage> {
         // clear text field
         _messageController.clear();
       }
+
+      scrollDown();
     }
 
   @override

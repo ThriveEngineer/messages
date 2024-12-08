@@ -52,7 +52,7 @@ class SettingsPage extends StatelessWidget {
                     ),
                    ),
 
-                   SizedBox(width: 180),
+                   SizedBox(width: 170),
 
                    Text(
                     "Adaptive",
@@ -87,7 +87,7 @@ class SettingsPage extends StatelessWidget {
                     ),
                    ),
 
-                   SizedBox(width: 190),
+                   SizedBox(width: 180),
                    Icon(
                     Icons.arrow_forward_rounded, 
                     color: Theme.of(context).colorScheme.inversePrimary
@@ -124,7 +124,7 @@ class SettingsPage extends StatelessWidget {
                       ),
                      ),
                  
-                     SizedBox(width: 240),
+                     SizedBox(width: 230),
                      Icon(
                       Icons.arrow_forward_rounded, 
                       color: Theme.of(context).colorScheme.inversePrimary

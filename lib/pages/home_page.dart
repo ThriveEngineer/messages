@@ -1,5 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:messages/components/add_user_button.dart';
 import 'package:messages/components/my_drawer.dart';
 import 'package:messages/components/user_tile.dart';
 import 'package:messages/pages/chat_page.dart';
@@ -29,6 +31,9 @@ class HomePage extends StatelessWidget {
                 ),
               ),
         ),
+        actions: [
+          ChatButton(currentUserEmail: FirebaseAuth.instance.currentUser!.email!),
+        ],
       ),
       drawer: const MyDrawer(),
 
