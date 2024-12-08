@@ -4,11 +4,12 @@
 
 ![Logo](https://framerusercontent.com/images/S1reQas41vn9JiEzgT3TxwQbIUw.png)
 
-Messages is a messanger, where you are chatting with your email. Coming soon!!!
+Nothing Messages is a messanger, where you are chatting with your email.
 
 ## Features✨
-
 - Light/dark mode
+
+## Coming soon!!!
 - Report users
 - Block users
 - Add users
