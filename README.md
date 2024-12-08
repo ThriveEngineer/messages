@@ -16,7 +16,8 @@ Download Normal themed Messages [APK](https://github.com/ThriveEngineer/messages
 ## Coming soon!!!
 - Report users
 - Block users
-- Add users
+- notification
+- Send images
 
 ## Getting Started
 #### 1. Clone the repository
