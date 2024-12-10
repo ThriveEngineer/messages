@@ -8,11 +8,17 @@ import 'package:messages/pages/chat_page.dart';
 import 'package:messages/services/auth/auth_service.dart';
 import 'package:messages/services/chat/chat_services.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   HomePage({super.key});
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   // chat @ auth service
   final ChatService _chatService = ChatService();
+
   final AuthService _authService = AuthService();
 
   @override

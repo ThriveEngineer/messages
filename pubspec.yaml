@@ -44,6 +44,8 @@ dependencies:
   permission_handler: ^11.3.1
   firebase_messaging: ^15.1.6
   flutter_local_notifications: ^18.0.1
+  sidebarx: ^0.17.1
+  flutter_side_menu: ^0.5.41
 
 dev_dependencies:
   flutter_test:

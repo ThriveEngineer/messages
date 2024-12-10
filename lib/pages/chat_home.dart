@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_side_menu/flutter_side_menu.dart';
 import 'package:intl/intl.dart';
 import 'package:messages/components/add_user_button.dart';
 import 'package:messages/components/my_drawer.dart';
 
-class ChatHomeScreen extends StatelessWidget {
+class ChatHomeScreen extends StatefulWidget {
   final String currentUserEmail;
 
   const ChatHomeScreen({
@@ -14,7 +15,13 @@ class ChatHomeScreen extends StatelessWidget {
   }) : super(key: key);
 
   @override
+  State<ChatHomeScreen> createState() => _ChatHomeScreenState();
+}
+
+class _ChatHomeScreenState extends State<ChatHomeScreen> {
+  @override
   Widget build(BuildContext context) {
+    final currentWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.surface.withOpacity(0.5),
@@ -32,8 +39,8 @@ class ChatHomeScreen extends StatelessWidget {
 
       drawer: const MyDrawer(),
 
-      body: ChatRoomsList(currentUserEmail: currentUserEmail),
-      floatingActionButton: ChatButton(currentUserEmail: currentUserEmail),
+      body: ChatRoomsList(currentUserEmail: widget.currentUserEmail),
+      floatingActionButton: ChatButton(currentUserEmail: widget.currentUserEmail),
     );
   }
 }

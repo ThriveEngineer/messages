@@ -143,7 +143,7 @@ class _ChatButtonState extends State<ChatButton> {
 }
 
 // Basic Chat Screen widget
-class ChatScreen extends StatelessWidget {
+class ChatScreen extends StatefulWidget {
   final String chatRoomId;
   final String currentUserEmail;
   final String otherUserEmail;
@@ -156,24 +156,30 @@ class ChatScreen extends StatelessWidget {
   }) : super(key: key);
 
   @override
+  State<ChatScreen> createState() => _ChatScreenState();
+}
+
+class _ChatScreenState extends State<ChatScreen> {
+  @override
   Widget build(BuildContext context) {
+    final currentWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        title: Text(otherUserEmail),
+        title: Text(widget.otherUserEmail),
         elevation: 1,
       ),
       body: Column(
         children: [
           Expanded(
             child: MessagesList(
-              chatRoomId: chatRoomId,
-              currentUserEmail: currentUserEmail,
+              chatRoomId: widget.chatRoomId,
+              currentUserEmail: widget.currentUserEmail,
             ),
           ),
           MessageInput(
-            chatRoomId: chatRoomId,
-            currentUserEmail: currentUserEmail,
-            otherUserEmail: otherUserEmail,
+            chatRoomId: widget.chatRoomId,
+            currentUserEmail: widget.currentUserEmail,
+            otherUserEmail: widget.otherUserEmail,
           ),
         ],
       ),
@@ -373,10 +379,11 @@ class _MessageInputState extends State<MessageInput> {
 
   @override
   Widget build(BuildContext context) {
+    final currentWidth = MediaQuery.of(context).size.width;
     return Padding(
-      padding: const EdgeInsets.only(bottom: 10, left: 10, right: 10),
+      padding: currentWidth < 600 ? const EdgeInsets.only(bottom: 10, left: 10, right: 10) : const EdgeInsets.only(bottom: 10, left: 20, right: 20),
       child: Container(
-        padding: const EdgeInsets.all(8),
+        padding: currentWidth < 600 ? const  EdgeInsets.all(8) : const  EdgeInsets.all(0),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(45),
           color: Theme.of(context).colorScheme.tertiary,
