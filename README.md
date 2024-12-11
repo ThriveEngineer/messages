@@ -3,6 +3,7 @@
 # Messages
 
 ![Image](https://framerusercontent.com/images/P1TBX2V2pa1nzuLn2wFmP9vgFmg.png)
+![Image](https://framerusercontent.com/images/bjgMagmVaNOey56MHmuRTiP8fw.png)
 
 Messages is a messanger, where you are chatting with your email. Messages is also available with the Nothing theme. 
 
