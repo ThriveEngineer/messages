@@ -42,6 +42,7 @@ class RegisterPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final currentWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -65,37 +66,49 @@ class RegisterPage extends StatelessWidget {
               const SizedBox(height: 25),
           
               // email textfield
-              MyTextfield(
-                hintText: "Enter email",
-                obscureText: false,
-                controller: _emailController,
-                ),
+              Container(
+                width: currentWidth > 600 ? 400 : null,
+                child: MyTextfield(
+                  hintText: "Enter email",
+                  obscureText: false,
+                  controller: _emailController,
+                  ),
+              ),
           
               const SizedBox(height: 10),
           
               // password textfield
-              MyTextfield(
-                hintText: "Enter password",
-                obscureText: true,
-                controller: _pwController,
-                ),
+              Container(
+                width: currentWidth > 600 ? 400 : null,
+                child: MyTextfield(
+                  hintText: "Enter password",
+                  obscureText: true,
+                  controller: _pwController,
+                  ),
+              ),
           
               const SizedBox(height: 10),
           
                 // confirm password textfield
-              MyTextfield(
-                hintText: "Confirm password", 
-                obscureText: true,
-                controller: _confirmPwController,
-                ),
+              Container(
+                width: currentWidth > 600 ? 400 : null,
+                child: MyTextfield(
+                  hintText: "Confirm password", 
+                  obscureText: true,
+                  controller: _confirmPwController,
+                  ),
+              ),
           
               const SizedBox(height: 25),
           
               // login button
-              MyButton(
-                text: "Register", 
-                onTap: () => register(context),
-                ),
+              Container(
+                width: currentWidth > 600 ? 400 : null,
+                child: MyButton(
+                  text: "Register", 
+                  onTap: () => register(context),
+                  ),
+              ),
           
               const SizedBox(height: 25),
           

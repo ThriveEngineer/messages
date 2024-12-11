@@ -4,6 +4,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:intl/intl.dart';
 import 'package:messages/components/chat_bubble.dart';
 import 'package:messages/components/my_textfield.dart';
+import 'package:messages/pages/chat_home.dart';
+import 'package:messages/pages/settings_page.dart';
+import 'package:messages/services/auth/auth_gate.dart';
 import 'package:messages/services/auth/auth_service.dart';
 import 'package:messages/services/chat/chat_services.dart';
 
@@ -160,26 +163,54 @@ class ChatScreen extends StatefulWidget {
 }
 
 class _ChatScreenState extends State<ChatScreen> {
+  void logout() {
+    final _auth = AuthService();
+    _auth.signOut();
+  }
   @override
   Widget build(BuildContext context) {
     final currentWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.otherUserEmail),
+        title: currentWidth < 600 ?Text(widget.otherUserEmail) : Center(child: Text(widget.otherUserEmail)),
         elevation: 1,
+        leading: currentWidth > 600 ? IconButton(
+          onPressed: () {
+            logout();
+                  Navigator.pushReplacement(
+                      context, MaterialPageRoute(builder: (context) => AuthGate()));
+          }, 
+          icon: Icon(Icons.logout_rounded)
+          ) : null,
       ),
-      body: Column(
+      body: Row(
         children: [
-          Expanded(
-            child: MessagesList(
-              chatRoomId: widget.chatRoomId,
-              currentUserEmail: widget.currentUserEmail,
+          currentWidth > 600 ? Container(
+            decoration: BoxDecoration(
+              color: Theme.of(context).colorScheme.surface.withOpacity(0.5),
             ),
-          ),
-          MessageInput(
-            chatRoomId: widget.chatRoomId,
-            currentUserEmail: widget.currentUserEmail,
-            otherUserEmail: widget.otherUserEmail,
+            width: 370,
+            child: ChatRoomsList(
+              currentUserEmail: widget.currentUserEmail,
+              ),
+          ) : Container(),
+          Container(
+            width: currentWidth > 600 ? currentWidth - 370 : currentWidth,
+            child: Column(
+              children: [
+                Expanded(
+                  child: MessagesList(
+                    chatRoomId: widget.chatRoomId,
+                    currentUserEmail: widget.currentUserEmail,
+                  ),
+                ),
+                MessageInput(
+                  chatRoomId: widget.chatRoomId,
+                  currentUserEmail: widget.currentUserEmail,
+                  otherUserEmail: widget.otherUserEmail,
+                ),
+              ],
+            ),
           ),
         ],
       ),

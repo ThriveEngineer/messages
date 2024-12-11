@@ -15,27 +15,30 @@ class SettingsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final currentWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.surface.withOpacity(0.5),
         title: Padding(
           padding: const EdgeInsets.only(left: 110),
-          child: Text(
+          child: currentWidth < 600 ? Text(
               'Settings',
               style: TextStyle(
                 color: Theme.of(context).colorScheme.inversePrimary,
                 fontWeight: FontWeight.w500
                 ),
-              ),
+              ) : null,
         ),
       ),
 
       body: Column(
         children: [
 
+          SizedBox(height: 15,),
+
           // Dark Mode Switch
           Center(
-               child: Container(
+               child: currentWidth < 600 ? Container(
                 padding: const EdgeInsets.all(25),
                 margin: const EdgeInsets.symmetric(horizontal: 25),
                 decoration: BoxDecoration(
@@ -63,7 +66,7 @@ class SettingsPage extends StatelessWidget {
                     )
                   ],
                 ),
-                           ),
+                           ) : null,
              ),
 
              SizedBox(height: 15,),
