@@ -57,12 +57,23 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^4.0.0
+  msix: ^3.16.8
 flutter_icons:
   android: true  
   ios: true  
   image_path: "assets/messages_logo.png"  
   adaptive_icon_background: "assets/messages_logo.png"  
   adaptive_icon_foreground: "assets/messages_logo.png"
+
+msix_config:
+  display_name: Messages
+  publisher_display_name: Thrive
+  identity_name: thrive.app.messages
+  msix_version: 1.0.0.0
+  logo_path: assets/messages_logo.png
+  capabilities: internetClient
+  app_installer:
+    publish_folder_path: c:\Flutter
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
